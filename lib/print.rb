@@ -6,23 +6,23 @@ class Print
     @price = total_price
   end
 
-  def scrub_decimals(item)
+  def to_decimals(item)
     item = "%.2f" % item
     return item
   end
 
   def display_item(item)
-      item[:total] = scrub_decimals(item[:total])
+      item[:total] = to_decimals(item[:total])
       puts "#{item[:qty]} #{item[:name]}: #{item[:total]}"
   end
 
   def display_sales_tax
-    @sales_tax = scrub_decimals(@sales_tax)
+    @sales_tax = to_decimals(@sales_tax)
     puts "Sales Taxes: #{@sales_tax}"
   end
 
   def display_price
-    @price = scrub_decimals(@price)
+    @price = to_decimals(@price)
     puts "Total: #{@price}"
   end
 
